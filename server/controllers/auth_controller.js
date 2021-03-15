@@ -1,6 +1,9 @@
 
 module.exports.current_user = (req, res) => {
-  res.json(req.user)
+  if(!req.user){
+     return res.json(null);
+  }
+    res.json(req.user)
 }
 
 module.exports.logout_user = (req, res) => {

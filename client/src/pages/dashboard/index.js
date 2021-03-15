@@ -1,18 +1,19 @@
 import React from 'react';
-import { curren_user } from '../../actions/auth';
+import { current_user } from '../../actions/auth';
 
-const Dashboard = () => {
+const Dashboard = ( ) => {
    const [user, setUser] = React.useState();
 
    React.useEffect(() => {
-       curren_user()
+       current_user()
         .then(response => setUser(response))
         .catch((err) => console.log(err))
-   });
+   }, []);
 
    const _handleLogoutInClick = () => {
      window.open("http://localhost:8000/api/auth/logout", "_self");
    }
+
   return <React.Fragment>
               {user && <div>
                 <h6>Name: {user.name}</h6>

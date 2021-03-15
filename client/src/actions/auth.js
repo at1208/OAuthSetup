@@ -1,4 +1,4 @@
-export const curren_user = () => {
+export const current_user = () => {
    return fetch(`${process.env.REACT_APP_API}/auth/currentUser`, {
     method: 'GET',
     credentials: "include",
